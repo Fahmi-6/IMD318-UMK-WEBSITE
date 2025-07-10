@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Pejabat Perpustakaan Dan Pengurusan Ilmu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="image/umklogo.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+    }
+
+    .logo {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .topbar span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar {
+      padding: 0 2rem;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 700;
+    }
+
+    .navbar a:hover {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .content-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      flex: 1;
+    }
+
+    .content-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 3rem;
+    }
+
+    .content-section h2 {
+      color: #2c3e50;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .about-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-card h3 {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .about-card h3 i {
+      color: #3498db;
+      font-size: 1.2rem;
+    }
+
+    .about-card p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .mission-card, .vision-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .mission-card h3, .vision-card h3 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .mission-card h3 i, .vision-card h3 i {
+      color: #3498db;
+      font-size: 1.5rem;
+    }
+
+    .mission-card p, .vision-card p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .content-section h2 {
+        font-size: 2rem;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .navbar a {
+        padding: 0.8rem 1rem;
+      }
+
+      .topbar span {
+        font-size: 1.2rem;
+      }
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="topbar">
+      <img src="image/logoumk.png" class="logo" alt="Pejabat Perpustakaan Dan Pengurusan Ilmu">
+      <span>Pejabat Perpustakaan Dan Pengurusan Ilmu</span>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content-container">
+    <section class="content-section">
+      <h2>About Our Library</h2>
+      <p class="intro-text">
+        The Pejabat Perpustakaan Dan Pengurusan Ilmu serves as the intellectual heart of Universiti Malaysia Kelantan, 
+        providing comprehensive resources, innovative services, and dynamic spaces that foster learning, research, and academic excellence.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3><i class="fas fa-history"></i> Our History</h3>
+          <p>
+            Established alongside UMK, our library has grown from a modest collection to a comprehensive academic resource center. 
+            We have continuously evolved to meet the changing needs of our academic community, embracing both traditional and digital resources.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3><i class="fas fa-users"></i> Our Community</h3>
+          <p>
+            We serve students, faculty, researchers, and staff across all UMK campuses, providing equal access to information resources 
+            and supporting diverse academic disciplines from business and entrepreneurship to creative technology and biomedical sciences.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3><i class="fas fa-lightbulb"></i> Innovation</h3>
+          <p>
+            Our library embraces cutting-edge technology and innovative service delivery methods. We provide digital resources, 
+            online research support, and modern learning spaces designed to enhance the academic experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="mission-vision">
+        <div class="mission-card">
+          <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+          <p>
+            Providing the high quality resources, infrastructure and services in supporting the instructional, learning and research programs especially in entrepreneurship field.
+          </p>
+        </div>
+
+        <div class="vision-card">
+          <h3><i class="fas fa-eye"></i> Our Vision</h3>
+          <p>
+            Aspires to be the leading knowledge centre of entrepreneurial excellence through development of relevance collection, efficiency of information services and latest information technology empowerment.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; PEJABAT PERPUSTAKAAN DAN PENGURUSAN ILMU, All Rights Reserved.
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Scroll animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.about-card, .mission-card, .vision-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

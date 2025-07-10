@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Pejabat Perpustakaan Dan Pengurusan Ilmu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="image/umklogo.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+    }
+
+    .logo {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .topbar span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar {
+      padding: 0 2rem;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 700;
+    }
+
+    .navbar a:hover {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .content-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .content-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 3rem;
+    }
+
+    .content-section h2 {
+      color: #2c3e50;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .service-card h3 {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-features li {
+      padding: 0.5rem 0;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .service-features li i {
+      color: #3498db;
+      font-size: 0.8rem;
+    }
+
+    .service-hours {
+      background: rgba(52, 152, 219, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .service-hours h4 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .service-hours p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .contact-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-section h2 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-section p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.05));
+      border-radius: 20px;
+      border: 1px solid rgba(52, 152, 219, 0.2);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(155, 89, 182, 0.1));
+    }
+
+    .contact-item i {
+      color: #3498db;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
+    }
+
+    .contact-item div {
+      text-align: center;
+    }
+
+    .contact-item h4 {
+      color: #2c3e50;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .contact-item p {
+      color: #666;
+      font-size: 1rem;
+      margin: 0;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .content-section h2 {
+        font-size: 2rem;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        padding: 1.5rem 1rem;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .navbar a {
+        padding: 0.8rem 1rem;
+      }
+
+      .topbar span {
+        font-size: 1.2rem;
+      }
+
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="topbar">
+      <img src="image/logoumk.png" class="logo" alt="Pejabat Perpustakaan Dan Pengurusan Ilmu">
+      <span>Pejabat Perpustakaan Dan Pengurusan Ilmu</span>
+    </div>
+    
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content-container">
+    <section class="content-section">
+      <h2>Our Services</h2>
+      <p class="intro-text">
+        We offer comprehensive library services designed to support your academic journey. 
+        From book lending to digital resources, research assistance to study spaces, we're here to help you succeed.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Book Lending</h3>
+          <p>Borrow from our extensive collection of books, journals, and academic materials.</p>
+          <div class="service-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Physical and digital book loans</li>
+              <li><i class="fas fa-check"></i> Extended loan periods for students</li>
+              <li><i class="fas fa-check"></i> Online renewal system</li>
+              <li><i class="fas fa-check"></i> Inter-library loan services</li>
+            </ul>
+          </div>
+          <div class="service-hours">
+            <h4>Service Hours</h4>
+            <p>Mon-Fri: 9:00 AM - 5:00 PM<br>Sat-Sun: Closed</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3>Computer Access</h3>
+          <p>Access our computer stations with high-speed internet and essential software.</p>
+          <div class="service-features">
+            <ul>
+              <li><i class="fas fa-check"></i> 50+ computer workstations</li>
+              <li><i class="fas fa-check"></i> Microsoft Office suite</li>
+              <li><i class="fas fa-check"></i> Research databases access</li>
+              <li><i class="fas fa-check"></i> Printing and scanning services</li>
+            </ul>
+          </div>
+          <div class="service-hours">
+            <h4>Service Hours</h4>
+            <p>Mon-Fri: 8:00 AM - 10:00 PM<br>Sat-Sun: Closed</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Reading Rooms</h3>
+          <p>Quiet study spaces and collaborative areas for individual and group learning.</p>
+          <div class="service-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Silent study areas</li>
+              <li><i class="fas fa-check"></i> Group discussion rooms</li>
+              <li><i class="fas fa-check"></i> Reservable study spaces</li>
+              <li><i class="fas fa-check"></i> Comfortable seating arrangements</li>
+            </ul>
+          </div>
+          <div class="service-hours">
+            <h4>Service Hours</h4>
+            <p>Mon-Fri: 9:00 AM - 5:00 PM<br>Sat-Sun: Closed</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Community Events</h3>
+          <p>Educational workshops, seminars, and cultural events for the academic community.</p>
+          <div class="service-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Research methodology workshops</li>
+              <li><i class="fas fa-check"></i> Academic writing seminars</li>
+              <li><i class="fas fa-check"></i> Digital literacy training</li>
+              <li><i class="fas fa-check"></i> Author meet-and-greet sessions</li>
+            </ul>
+          </div>
+          <div class="service-hours">
+            <h4>Event Schedule</h4>
+            <p>Check our calendar for upcoming events<br>Registration required for most events</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Research Assistance</h3>
+          <p>Expert guidance for your research projects and academic assignments.</p>
+          <div class="service-features">
+            <ul>
+              <li><i class="fas fa-check"></i> One-on-one research consultations</li>
+              <li><i class="fas fa-check"></i> Database search training</li>
+              <li><i class="fas fa-check"></i> Citation and referencing help</li>
+              <li><i class="fas fa-check"></i> Literature review assistance</li>
+            </ul>
+          </div>
+          <div class="service-hours">
+            <h4>Consultation Hours</h4>
+            <p>Mon-Fri: 9:00 AM - 5:00 PM<br>By appointment on weekends</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Digital Resources</h3>
+          <p>24/7 access to online databases, e-books, and digital collections.</p>
+          <div class="service-features">
+            <ul>
+              <li><i class="fas fa-check"></i> 100+ online databases</li>
+              <li><i class="fas fa-check"></i> E-book collections</li>
+              <li><i class="fas fa-check"></i> Digital journals and magazines</li>
+              <li><i class="fas fa-check"></i> Remote access for students</li>
+            </ul>
+          </div>
+          <div class="service-hours">
+            <h4>Access</h4>
+            <p>Available 24/7 online<br>Support: Mon-Fri 9:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h2>Need Help?</h2>
+      <p>Our friendly staff are always ready to assist you with any questions or support you need.</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h4>Phone</h4>
+            <p>+60 9-771 7000</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p>pkk@umk.edu.my</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h4>General Hours</h4>
+            <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Location</h4>
+            <p>UNIVERSITI MALAYSIA KELANTAN 16300 Bachok,Kelantan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; PEJABAT PERPUSTAKAAN DAN PUSAT ILMU, All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all service cards
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

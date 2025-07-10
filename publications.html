@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications - Pejabat Perpustakaan Dan Pengurusan Ilmu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="icon" href="image/umklogo.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+    }
+
+    .logo {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .topbar span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav.navbar {
+      padding: 0 2rem;
+    }
+
+    nav.navbar ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav.navbar a {
+      text-decoration: none;
+      color: #333;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    nav.navbar a:hover {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .page-header {
+      background: rgba(255,255,255,0.95);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      color: #2c3e50;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+
+    .publications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .publication-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .publication-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .publication-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .publication-card h3 {
+      font-size: 1.4rem;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .publication-card p.price {
+      color: #2980b9;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 3rem 0 1rem;
+      color: #2c3e50;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      nav.navbar ul {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      nav.navbar a {
+        padding: 0.8rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <img src="image/logoumk.png" class="logo" alt="Logo UMK">
+      <span>Pejabat Perpustakaan Dan Pengurusan Ilmu</span>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <section class="page-header">
+      <h1>Our Publications</h1>
+      <p>Explore our curated publications including annual reports, research guides, and educational materials.</p>
+    </section>
+
+    <!-- Featured -->
+    <h2 class="section-title">📘 Featured</h2>
+    <div class="publications-grid">
+      <div class="publication-card">
+        <img src="image/featured1.png" alt="Featured Book">
+        <h3>Elements of Entrepreneurship</h3>
+        <p class="price">RM35.00</p>
+      </div>
+      <div class="publication-card">
+        <img src="image/featured2.png" alt="Featured Book">
+        <h3>Integrated Reading and Writing: 1st Edition</h3>
+        <p class="price">RM28.00</p>
+      </div>
+    </div>
+
+    <!-- Latest -->
+    <h2 class="section-title">🆕 Latest</h2>
+    <div class="publications-grid">
+      <div class="publication-card">
+        <img src="image/latest1.png" alt="Latest Book">
+        <h3>Lens on Insecta: Unveiling The Fascinating Realm Of Insects in Malaysia</h3>
+        <p class="price">RM130.00</p>
+      </div>
+      <div class="publication-card">
+        <img src="image/latest2.png" alt="Latest Book">
+        <h3>Kelantan Dalam Bingkai</h3>
+        <p class="price">RM150.00</p>
+      </div>
+    </div>
+
+    <!-- Bestseller -->
+    <h2 class="section-title">🔥 Bestseller</h2>
+    <div class="publications-grid">
+      <div class="publication-card">
+        <img src="image/best1.png" alt="Bestseller Book">
+        <h3>UBI 1012 English I UBI 1022 English (E-book)</h3>
+        <p class="price">RM60.00</p>
+      </div>
+      <div class="publication-card">
+        <img src="image/best2.png" alt="Bestseller Book">
+        <h3>Modul Falsafah Dan Ilmu Semasa</h3>
+        <p class="price">RM25.00</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; PEJABAT PERPUSTAKAAN DAN PENGURUSAN ILMU, All Rights Reserved.
+  </footer>
+</body>
+</html>
